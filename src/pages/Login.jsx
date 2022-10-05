@@ -1,4 +1,3 @@
-/*
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -74,7 +73,7 @@ const Login = () => {
               <p className="py-8">
                 
                 
-                <span className="text-gray-600">New to Kid's Watch?</span>{" "}
+                <span className="text-white-600">New to Kid's Watch?</span>{" "}
                 <Link to="/signup">Sign Up</Link>
               </p>
             </form>
@@ -86,4 +85,3 @@ const Login = () => {
 };
 
 export default Login;
-*/
