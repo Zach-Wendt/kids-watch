@@ -1,5 +1,4 @@
-const API_KEY = "https://www.themoviedb.org/documentation/api?language=en-US to get key ";
-// use to validate key https://api.themoviedb.org/3/movie/popular?api_key=API KEY HERE
+const API_KEY = "API"; 
 
 
 const requests = {
