@@ -2,12 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Movie from "./Movie";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import YouTube from "react-youtube";
-import movieTrailer from "movie-trailer";
 
 const Row = ({ title, fetchURL, rowID }) => {
   const [movies, setMovies] = useState([]);
-  const [trailerUrl, setTrailerUrl] = useState("");
 
   useEffect(() => {
     axios.get(fetchURL).then((response) => {
@@ -24,26 +21,6 @@ const Row = ({ title, fetchURL, rowID }) => {
     slider.scrollLeft = slider.scrollLeft + 500;
   };
 
-  const opts = {
-    height: "390",
-    width: "100%",
-    playerVars: {
-      autoplay: 1,
-    },
-  };
-
-  const handleClick = (item) => {
-    if (trailerUrl) {
-      setTrailerUrl("");
-    } else {
-      movieTrailer(item?.title || "")
-        .then((url) => {
-          const urlParams = new URLSearchParams(new URL(url).search);
-          setTrailerUrl(urlParams.get("v"));
-        })
-        .catch(() => console.log("Temporarily Unavailable"));
-    }
-  };
 
   return (
     <>
@@ -60,7 +37,7 @@ const Row = ({ title, fetchURL, rowID }) => {
         >
           {movies.map((item, id) => (
             <Movie key={id} item={item} 
-            onClick = {()=>handleClick(item)} />
+             />
           ))}
         </div>
         <MdChevronRight
@@ -69,7 +46,6 @@ const Row = ({ title, fetchURL, rowID }) => {
           size={40}
         />
       </div>
-      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </>
   );
 };
