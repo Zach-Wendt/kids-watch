@@ -49,8 +49,6 @@ const Movie = ({ item, fetchURL }) => {
     width: "100%",
     playerVars: {
       autoplay: 1,
-      modestbranding: 1,
-      controls: 0,
     },
   };
 
