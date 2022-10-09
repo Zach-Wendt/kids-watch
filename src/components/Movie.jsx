@@ -12,9 +12,10 @@ const Movie = ({ item, fetchURL }) => {
   const [like, setLike] = useState(false);
   const [saved, setSaved] = useState(false);
   const { user } = UserAuth();
-
+  
   const [trailerUrl, setTrailerUrl] = useState("");
   const [movies, setMovies] = useState([]);
+
 
   const movieID = doc(db, "users", `${user?.email}`);
 
@@ -23,6 +24,9 @@ const Movie = ({ item, fetchURL }) => {
       setMovies(response.data.results);
     });
   }, [fetchURL]);
+
+//console.log fetchURL
+  console.log(fetchURL)
 
   const saveShow = async () => {
     if (user?.email) {
@@ -61,21 +65,34 @@ const Movie = ({ item, fetchURL }) => {
     }
   };
 
+  //console.log(item);
+  console.log(item.title);
+
+  console.log(handleClick)
   return (
     <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2">
       <img
         className="w-full h-auto block"
         src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
         alt={item?.title}
-        onClick={() => handleClick(item)}
+        // onclick function item.title
       />
-      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
-
       <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white">
         <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
           {item?.title}
         </p>
-        <p onClick={saveShow}>
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-black/80">
+          <button
+            onClick={() => handleClick(item)}
+            className="bg-black/80 text-white w-full h-full"
+          >
+            <p className="text-xs md:text-sm font-bold flex justify-center items-center h-full text-center opacity-30">
+              {trailerUrl ? "Close" : "Trailer"}
+            </p>
+          </button>
+        </div>
+        <p 
+        onClick={saveShow}>
           {like ? (
             <FaHeart className="absolute top-4 left-4 text-gray-300" />
           ) : (
@@ -83,6 +100,7 @@ const Movie = ({ item, fetchURL }) => {
           )}
         </p>
       </div>
+      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </div>
   );
 };
