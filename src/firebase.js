@@ -9,6 +9,7 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // BE CAREFUL ON PUTTING INFORMATION IN THE OPEN
 const firebaseConfig = {
+
 apiKey: "AIzaSyCxuy8sYYX8aX71dcLR0mbsbCsjq_6ukPc",
 authDomain: "kid-s-watch.firebaseapp.com",
 projectId: "kid-s-watch",
