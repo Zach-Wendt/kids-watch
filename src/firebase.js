@@ -9,7 +9,13 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // BE CAREFUL ON PUTTING INFORMATION IN THE OPEN
 const firebaseConfig = {
-
+apiKey: "AIzaSyCxuy8sYYX8aX71dcLR0mbsbCsjq_6ukPc",
+authDomain: "kid-s-watch.firebaseapp.com",
+projectId: "kid-s-watch",
+storageBucket: "kid-s-watch.appspot.com",
+messagingSenderId: "535314640681",
+appId: "1:535314640681:web:6824e1b608038883971138",
+measurementId: "G-YL697RQKJH"
 
   
 };
