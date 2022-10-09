@@ -49,6 +49,8 @@ const Movie = ({ item, fetchURL }) => {
     width: "100%",
     playerVars: {
       autoplay: 1,
+      modestbranding: 1,
+      controls: 0,
     },
   };
 
@@ -75,7 +77,6 @@ const Movie = ({ item, fetchURL }) => {
         className="w-full h-auto block"
         src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
         alt={item?.title}
-        // onclick function item.title
       />
       <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white">
         <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
@@ -84,9 +85,9 @@ const Movie = ({ item, fetchURL }) => {
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-black/80">
           <button
             onClick={() => handleClick(item)}
-            className="bg-black/80 text-white w-full h-full"
+            className="bg-black/80 text-white w-full h-full opacity-40 hover:opacity-40"
           >
-            <p className="text-xs md:text-sm font-bold flex justify-center items-center h-full text-center opacity-30">
+            <p className="text-xs md:text-sm font-bold flex justify-center items-center h-full text-center opacity-70">
               {trailerUrl ? "Close" : "Trailer"}
             </p>
           </button>
