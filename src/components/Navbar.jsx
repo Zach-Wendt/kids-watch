@@ -21,7 +21,7 @@ const Navbar = () => {
     <div className="flex items-center justify-between p-4 z-[100] w-full absolute">
       <Link to="/">
         <h1 className="text-blue-600 text-5xl font-bold cursor-pointer">
-          Kid's Watch
+          <img src="https://r72.cooltext.com/rendered/cooltext421102137296245.png" />
         </h1>
       </Link>
       {user?.email ? (
@@ -39,10 +39,10 @@ const Navbar = () => {
       ) : (
         <div>
           <Link to="/login">
-            <button className="text-white pr-4">Sign In</button>
+            <button className="bg-blue-600 px-4 py-2 rounded cursor-pointer text-white pr-4">Sign In</button>
           </Link>
           <Link to="/signup">
-            <button className="bg-blue-600 px-6 py-2 rounded cursor-pointer text-white">
+            <button className="bg-indigo-600 px-4 py-2 rounded cursor-pointer text-white">
               Sign Up
             </button>
           </Link>

@@ -7,7 +7,7 @@ const Account = () => {
       <div className='w-full text-white'>
         <img
           className='w-full h-[400px] object-cover'
-          // src=''
+          src="https://r4.wallpaperflare.com/wallpaper/577/496/4/peanuts-comic-snoopy-charlie-brown-theaters-wallpaper-e8068c8a2f5c37f90e90f9d2b2d94bb0.jpg"
           alt='/'
         />
         <div className='bg-black/60 fixed top-0 left-0 w-full h-[550px]'></div>

@@ -29,7 +29,7 @@ const Login = () => {
     <div className="w-full h-screen">
       <img
         className="hidden sm:block absolute w-full h-full object-cover"
-        // Find backdrop src=''
+        src="https://r4.wallpaperflare.com/wallpaper/577/496/4/peanuts-comic-snoopy-charlie-brown-theaters-wallpaper-e8068c8a2f5c37f90e90f9d2b2d94bb0.jpg"
         alt="/"
       />
       <div className="bg-black/60 fixed top-0 left-0 w-full h-screen"></div>
