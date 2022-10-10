@@ -2,6 +2,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
+import logo from './KidsWatchLogo.png';
 
 const Navbar = () => {
   const { user, logOut } = UserAuth();
@@ -21,7 +22,7 @@ const Navbar = () => {
     <div className="flex items-center justify-between p-4 z-[100] w-full absolute">
       <Link to="/">
         <h1 className="text-blue-600 text-5xl font-bold cursor-pointer">
-          <img src="https://r72.cooltext.com/rendered/cooltext421102137296245.png" />
+          <img src={logo} alt="logo" />
         </h1>
       </Link>
       {user?.email ? (
