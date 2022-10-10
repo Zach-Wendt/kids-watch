@@ -80,12 +80,12 @@ const Movie = ({ item, fetchURL }) => {
         <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
           {item?.title}
         </p>
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-black/80">
+        <div className="absolute bottom-0 left-0 w-full h-1/4 bg-black/80">
           <button
             onClick={() => handleClick(item)}
-            className="bg-black/80 text-white w-full h-full opacity-40 hover:opacity-40"
+            className="bg-black/80 text-white w-full h-full opacity-40"
           >
-            <p className="text-xs md:text-sm font-bold flex justify-center items-center h-full text-center opacity-70">
+            <p className="text-xs md:text-sm font-bold flex justify-center items-center h-1/4 text-center opacity-40">
               {trailerUrl ? "Close" : "Trailer"}
             </p>
           </button>
@@ -103,5 +103,28 @@ const Movie = ({ item, fetchURL }) => {
     </div>
   );
 };
+
+export const handleError = function() {
+  const html = `
+  <div class="error">
+      <div class="error__text">
+          <p class="error__heading">Error:</p>
+          <p class="error__description">Can't find trailer, please try another title!</p>
+      </div>
+  </div>
+  `
+  const body = document.querySelector('body');
+  body.insertAdjacentHTML('afterbegin', html);
+  const error = body.querySelector('.error');
+  error.classList.add('fade-in');
+
+  setTimeout(function() {
+      // error.classList.remove('fade-in');
+      error.classList.add('fade-out');
+      setTimeout(function() {
+          error.remove();
+      }, 500)
+  }, 2500)
+}
 
 export default Movie;
